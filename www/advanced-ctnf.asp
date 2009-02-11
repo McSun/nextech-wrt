@@ -5,12 +5,6 @@
 <title>Nex-Tech Lightning Jack Internet</title>
 <link rel="stylesheet" href="gray.css" type="text/css" />
 <script type='text/javascript' src='wrt.js'></script>
-<style type='text/css'>
-textarea {
-	width: 99%;
-	height: 10em;
-}
-</style>
 <script type='text/javascript'>
 
 //	<% nvram("ct_tcp_timeout,ct_udp_timeout,ct_max,nf_l7in,nf_ttl,nf_rtsp,nf_pptp,nf_h323,nf_ftp"); %>
