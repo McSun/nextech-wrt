@@ -157,7 +157,7 @@ function init()
 }
 </script>
 </HEAD>
-<body onload="init()" style="WIDTH: 100%; HEIGHT: 100%" bottomMargin="0" leftMargin="0" topMargin="0" rightMargin="0">
+<body onLoad="init()" style="WIDTH: 100%; HEIGHT: 100%" bottomMargin="0" leftMargin="0" topMargin="0" rightMargin="0">
 <script language="javascript">
 {  
 	function ChangeLink(obj,state,imgname)  {    
@@ -396,7 +396,7 @@ function init()
       <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
           <td valign=bottom class="CopyRight" nowrap>&nbsp;&nbsp;Copyright 2009 All Rights Reserved. Nex-Tech / A Rural Telephone Company. </td>
-          <td valign=bottom class="CopyRight" align=right nowrap colspan="2"
+          <td valign=bottom class="CopyRight" align=right nowrap colspan="2">
         </td>
         </tr>
         <tr>
