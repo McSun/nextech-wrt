@@ -7,8 +7,8 @@
 <script type='text/javascript' src='wrt.js'></script>
 <style type='text/css'>
 textarea {
-	width: 99%;
-	height: 10em;
+	width: 98%;
+	height: 15em;
 }
 </style>
 <script type='text/javascript'>
