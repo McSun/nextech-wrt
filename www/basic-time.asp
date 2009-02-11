@@ -397,7 +397,7 @@ function earlyInit()
       <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
           <td valign=bottom class="CopyRight" nowrap>&nbsp;&nbsp;Copyright 2009 All Rights Reserved. Nex-Tech / A Rural Telephone Company. </td>
-          <td valign=bottom class="CopyRight" align=right nowrap colspan="2"
+          <td valign=bottom class="CopyRight" align=right nowrap colspan="2">
         </td>
         </tr>
         <tr>
