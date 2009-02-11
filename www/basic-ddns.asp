@@ -12,7 +12,300 @@ textarea {
 }
 </style>
 <script type='text/javascript'>
-JS GOES HERE
+
+//	<% nvram("ddnsx0,ddnsx1,ddnsx_ip,wan_dns,wan_get_dns,dns_addget"); %>
+//	<% ddnsx(); %>
+
+/* REMOVE-BEGIN
+
+t = hostname (top)
+u = username/password
+h = hostname
+j = hostname (optional)
+c = custom url
+w = wildcard
+m = MX
+b = backup MX
+o = use OpenDNS
+a = freedns.afraid
+z = can't use client-given IP address
+
+REMOVE-END */
+
+var services = [
+	['', 'None', '', ''],
+	['3322', '3322', 'http://www.3322.org/', 'uhwmb'],
+	['3322-static', '3322 - Static', 'http://www.3322.org/', 'uhwmb'],
+	['dnsexit', 'DNS Exit', 'http://www.dnsexit.com/', 'uh'],
+	['dnsomatic', 'DNS-O-Matic', 'http://www.dnsomatic.com/', 'u'],
+	['dyndns', 'DynDNS - Dynamic', 'http://www.dyndns.com/', 'uhwmb'],
+	['dyndns-static', 'DynDNS - Static', 'http://www.dyndns.com/', 'uhwmb'],
+	['dyndns-custom', 'DynDNS - Custom', 'http://www.dyndns.com/', 'uhwmb'],
+	['sdyndns', 'DynDNS (https) - Dynamic', 'http://www.dyndns.com/', 'uhwmb'],
+	['sdyndns-static', 'DynDNS (https) - Static', 'http://www.dyndns.com/', 'uhwmb'],
+	['sdyndns-custom', 'DynDNS (https) - Custom', 'http://www.dyndns.com/', 'uhwmb'],
+	['dyns', 'DyNS', 'http://www.dyns.cx/', 'uh'],
+	['easydns', 'easyDNS', 'http://www.easydns.com/', 'uhwm'],
+	['seasydns', 'easyDNS (https)', 'http://www.easydns.com/', 'uhwm'],
+	['everydns', 'EveryDNS', 'http://www.everydns.net/', 'uj', null, null, 'Domain <small>(optional)</small>'],
+	['enom', 'eNom', 'http://www.enom.com/', 'ut', 'Domain'],
+	['afraid', 'FreeDNS (afraid.org)', 'http://freedns.afraid.org/', 'az'],
+	['ieserver', 'ieServer.net', 'http://www.ieserver.net/', 'uhz', 'Username / Hostname', null, 'Domain'],
+	['namecheap', 'namecheap', 'http://www.namecheap.com/', 'ut', 'Domain'],
+	['noip', 'No-IP.com', 'http://www.no-ip.com/', 'uh', 'Email Address', null, 'Hostname / Group'],
+	['opendns', 'OpenDNS', 'http://www.opendns.com/', 'uhoz', null, null, 'Network <small>(optional)</small>'],
+	['tzo', 'TZO', 'http://www.tzo.com/', 'uh', 'Email Address', 'Password'],
+	['zoneedit', 'ZoneEdit', 'http://www.zoneedit.com/', 'uh'],
+	['custom', 'Custom URL', '', 'c']];
+
+var opendns = ['208.67.222.222', '208.67.220.220'];
+var opendnsInUse = 0;
+
+function msgLoc(s)
+{
+	var r;
+
+	s = s.replace(/\n+/g, ' ');
+	if (r = s.match(/^(.*?): (.*)/)) {
+		r[2] = r[2].replace(/#RETRY (\d+) (\d+)/,
+			function(s, min, num) {
+				return '<br><small>(' + ((num >= 1) ? (num + '/3: ') : '') + 'Automatically retrying in ' + min + ' minutes)</small>';
+			}
+		);
+		return '<small>' + (new Date(r[1])).toLocaleString() + ':</small><br>' + r[2];
+	}
+	else if (s.length == 0) {
+		return '-';
+	}
+	return s;
+}
+
+function mop(s)
+{
+	var op, i;
+	
+	op = {};
+	for (i = s.length - 1; i >= 0; --i) {
+		op[s.charAt(i)] = 1;
+	}
+	
+	return op;
+}
+
+function verifyFields(focused, quiet)
+{
+	var i;
+	var data, r, e;
+	var op;
+	var enabled;
+	var b;
+	
+	b = E('_f_ddnsx_ip').value == 'custom';
+	elem.display(PR('_f_custom_ip'), b);
+	if ((b) && (!v_ip('_f_custom_ip', quiet))) return 0;
+	
+	r = 1;
+	for (i = 0; i < 2; ++i) {
+		data = services[E('_f_service' + i).selectedIndex] || services[0];
+		enabled = (data[0] != '');
+	
+		op = mop(data[3]);
+
+		elem.display(PR('url' + i), (enabled) && (data[0] != 'custom'));
+		elem.display('row_z' + i, op.z);
+
+		elem.display(PR('_f_hosttop' + i), op.t);
+		elem.display(PR('_f_user' + i), PR('_f_pass' + i), op.u);
+		elem.display(PR('_f_host' + i), op.h || op.j);
+		elem.display(PR('_f_cust' + i), 'custmsg' + i, op.c);
+		
+		elem.display(PR('_f_wild' + i), op.w);
+		elem.display(PR('_f_mx' + i), op.m);
+		elem.display(PR('_f_bmx' + i), op.b);
+		elem.display(PR('_f_opendns' + i), op.o);
+		elem.display(PR('_f_afraid' + i), op.a);
+		
+		elem.display(PR('_f_force' + i), 'last-response' + i, enabled);
+		elem.display('last-update' + i, enabled && !op.z);
+
+		if (enabled) {
+			PR('_f_user' + i).cells[0].innerHTML = data[4] || 'Username';
+			PR('_f_pass' + i).cells[0].innerHTML = data[5] || 'Password';
+			PR('_f_host' + i).cells[0].innerHTML = data[6] || 'Hostname';
+
+			e = E('url' + i);
+			e.href = data[2];
+			e.innerHTML = data[2];
+
+			if (op.c) {
+				e = E('_f_cust' + i);
+				e.value = e.value.trim();
+				if (e.value == '') {
+					e.value = 'http://';
+				}
+				if (e.value.search(/http(s?):\/\/./) != 0)  {
+					ferror.set(e, 'Expecting a URL -- http://... or https://...', quiet)
+					r = 0;
+				}
+				else {
+					ferror.clear(e);
+				}
+			}
+			else if (op.a) {
+				e = E('_f_afraid' + i);
+				e.value = e.value.trim();
+				if (e.value.match(/freedns\.afraid\.org\/dynamic\/update\.php\?([a-zA-Z0-9]+)/)) {
+					e.value = RegExp.$1;
+				}
+				if (e.value.search(/^[A-Za-z0-9]+/) == -1) {
+					ferror.set(e, 'Invalid hash or URL', quiet)
+					r = 0;
+				}
+				else {
+					ferror.clear(e);
+				}
+			}
+			else {
+				if ((!v_length('_f_user' + i, quiet, 1)) ||
+					(!v_length('_f_pass' + i, quiet, 1)) ||
+					((op.h) && (!op.o) && (!v_length('_f_host' + i, quiet, 1))) ||
+					((op.t) && (!v_length('_f_hosttop' + i, quiet, 1)))) {
+					r = 0;
+				}
+			}
+		}
+	}
+	
+	// shouldn't do this twice, but...
+	if (E('_f_opendns0') == focused) E('_f_opendns1').checked = E('_f_opendns0').checked;
+	if (E('_f_opendns1') == focused) E('_f_opendns0').checked = E('_f_opendns1').checked;
+	
+	return r;
+}
+
+function save()
+{
+	var fom;
+	var i, j, s;
+	var data, a, b;
+	var setopendns;
+	var op;
+	
+	if (!verifyFields(null, 0)) return;
+
+	fom = E('_fom')
+	
+	fom.ddnsx_ip.value = (E('_f_ddnsx_ip').value == 'custom') ? E('_f_custom_ip').value : E('_f_ddnsx_ip').value;
+	
+	setopendns = -1;
+	for (i = 0; i < 2; ++i) {
+		s = [];
+		data = services[E('_f_service' + i).selectedIndex] || services[0];
+		s.push(data[0]);
+		if (data[0] != '') {
+/* REMOVE-BEGIN
+
+t = hostname (top)
+u = username/password
+h = hostname
+c = custom url
+w = wildcard
+m = MX
+b = backup MX
+o = use OpenDNS
+a = freedns.afraid
+z = can't use client-given IP address
+
+*/
+		
+/*
+
+	username:password<
+	hostname<
+	wildcard<
+	mx<
+	backup mx<
+	custom url/afraid hash<
+
+REMOVE-END */
+			op = mop(data[3]);
+
+			if (op.u) s.push(E('_f_user' + i).value + ':' + E('_f_pass' + i).value);
+				else s.push('');				
+
+			if (op.t) {
+				s.push(E('_f_hosttop' + i).value);
+			}
+			else if ((op.h) || (op.j)) {
+				s.push(E('_f_host' + i).value);
+			}
+			else {
+				s.push('');					
+			}
+
+			if (op.w) s.push(E('_f_wild' + i).checked ? 1 : 0);
+				else s.push('');
+			if (op.m) s.push(E('_f_mx' + i).value)
+				else s.push('');
+			if (op.b) s.push(E('_f_bmx' + i).checked ? 1 : 0);
+				else s.push('');
+
+			if (op.c) {
+				s.push(E('_f_cust' + i).value);
+			}
+			else if (op.a) {
+				s.push(E('_f_afraid' + i).value);
+			}
+			else {
+				s.push('');
+			}
+
+			if (data[0] == 'opendns') setopendns = E('_f_opendns' + i).checked;
+		}
+		s = s.join('<');
+		fom['ddnsx' + i].value = s;
+		fom['ddnsx' + i + '_cache'].disabled = (!E('_f_force' + i).checked) && (s == nvram['ddnsx' + i]);
+	}
+
+	if (setopendns != -1) {
+		if (setopendns) {
+			if (opendnsInUse != opendns.length) {
+				fom.wan_dns.value = opendns.join(' ');
+				fom.wan_dns.disabled = 0;
+				fom._service.value += ',dns-restart';
+			}
+		}
+		else {
+			// not set if partial, do not remove if partial
+			if (opendnsInUse == opendns.length) {
+				a = nvram.wan_dns.split(/\s+/);
+				b = [];
+				for (i = a.length - 1; i >= 0; --i) {
+					for (j = opendns.length - 1; j >= 0; --j) {
+						if (a[i] == opendns[j]) {
+							a.splice(i, 1);
+							break;
+						}
+					}
+				}
+				fom.wan_dns.value = a.join(' ');
+				fom.wan_dns.disabled = 0;
+				fom._service.value += ',dns-restart';
+			}
+		}
+	}
+	
+	form.submit(fom);
+}
+
+function init()
+{
+	if ('<% psup("ddns-update"); %>' != 0) {
+		var e = E('footer-msg');
+		e.innerHTML = 'DDNS update is running. Please refresh after a few seconds.';
+		e.style.visibility = 'visible';
+	}
+}
 </script>
 <body onLoad="init()" style="WIDTH: 100%; HEIGHT: 100%" bottomMargin="0" leftMargin="0" topMargin="0" rightMargin="0">
 <script language="javascript">
