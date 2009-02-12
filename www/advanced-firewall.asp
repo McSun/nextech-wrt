@@ -126,8 +126,8 @@ function save()
                     <tr>
                       <td valign="top" align="left" style="padding-left: 10px;">
                         <form id='_fom' method='post' action='tomato.cgi'>
-
-                        <!-- / / / -->	
+                        
+                        <!-- / / / -->
                         
                         <input type='hidden' name='_nextpage' value='advanced-firewall.asp'>
                         <input type='hidden' name='_service' value='firewall-restart'>
@@ -154,8 +154,6 @@ function save()
                             <input type='button' value='Save' id='save-button' onclick='save()'>
                             <input type='button' value='Cancel' id='cancel-button' onclick='reloadPage();'>
                         <script type='text/javascript'>verifyFields(null, 1);</script>
-
-
 					</td>
                     </tr>
                   </table></td>
