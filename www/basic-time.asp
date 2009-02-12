@@ -5,12 +5,6 @@
 <title>Nex-Tech Lightning Jack Internet</title>
 <link rel="stylesheet" href="gray.css" type="text/css" />
 <script type='text/javascript' src='wrt.js'></script>
-<style type='text/css'>
-textarea {
-	width: 99%;
-	height: 10em;
-}
-</style>
 <script type='text/javascript'>
 
 //	<% nvram("tm_sel,tm_dst,tm_tz,ntp_updates,ntp_server,ntp_tdod,ntp_kiss"); %>
@@ -241,14 +235,6 @@ function earlyInit()
                     <tr>
                       <td valign="top" align="left" style="padding-left: 10px;">
                         <form id='_fom' method='post' action='tomato.cgi'>
-                        <table id='container' cellspacing=0>
-                        <tr><td colspan=2 id='header'>
-                            <div class='title'>Tomato</div>
-                            <div class='version'>Version <% version(); %></div>
-                        </td></tr>
-                        <tr id='body'><td id='navi'><script type='text/javascript'>navi()</script></td>
-                        <td id='content'>
-                        <div id='ident'><% ident(); %></div>
                         
                         <!-- / / / -->
                         
@@ -350,14 +336,9 @@ function earlyInit()
                         
                         <!-- / / / -->
                         
-                        </td></tr>
-                        <tr><td id='footer' colspan=2>
                             <span id='footer-msg'></span>
                             <input type='button' value='Save' id='save-button' onclick='save(0)'>
                             <input type='button' value='Cancel' id='cancel-button' onclick='reloadPage();'>
-                        </td></tr>
-                        </table>
-                        </form>
                         <script type='text/javascript'>earlyInit()</script>				
 					</td>
                     </tr>
