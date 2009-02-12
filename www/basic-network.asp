@@ -6,9 +6,9 @@
 <link rel="stylesheet" href="gray.css" type="text/css" />
 <script type='text/javascript' src='wrt.js'></script>
 <style type='text/css'>
-textarea {
-	width: 99%;
-	height: 10em;
+#spin {
+	visibility: hidden;
+	vertical-align: middle;
 }
 </style>
 <script type='text/javascript'>
@@ -743,15 +743,7 @@ function save()
                     <tr>
                       <td valign="top" align="left" style="padding-left: 10px;">
                         <form id='_fom' method='post' action='tomato.cgi'>
-                        <table id='container' cellspacing=0>
-                        <tr><td colspan=2 id='header'>
-                            <div class='title'>Tomato</div>
-                            <div class='version'>Version <% version(); %></div>
-                        </td></tr>
-                        <tr id='body'><td id='navi'><script type='text/javascript'>navi()</script></td>
-                        <td id='content'>
-                        <div id='ident'><% ident(); %></div>
-                        
+
                         <!-- / / / -->
                         
                         <input type='hidden' name='_nextpage' value='basic-network.asp'>
@@ -896,14 +888,9 @@ function save()
                         
                         <!-- / / / -->
                         
-                        </td></tr>
-                        <tr><td id='footer' colspan=2>
                             <span id='footer-msg'></span>
                             <input type='button' value='Save' id='save-button' onclick='save()'>
                             <input type='button' value='Cancel' id='cancel-button' onclick='reloadPage();'>
-                        </td></tr>
-                        </table>
-                        </form>
                         <script type='text/javascript'>earlyInit()</script>					
 					</td>
                     </tr>
