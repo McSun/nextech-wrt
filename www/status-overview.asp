@@ -225,7 +225,7 @@ function init()
 						<table cellpadding="10" cellspacing="10" width="100%">
 							<tr>
 							<td valign="top" width="50%" align="right">
-								<img src="easy-setup.png">
+								<a href="basic-setup.asp"><img src="easy-setup.png"></a>
 							</td>
 							<td valign="middle" width="50%" style="font-size: 18px;">
 								Your router has not been setup. <br/>
