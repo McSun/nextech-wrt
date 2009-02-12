@@ -280,14 +280,6 @@ function init()
                 <td><table width="90%">
                     <tr>
                       <td valign="top" align="left" style="padding-left: 10px;">
-                        <table id='container' cellspacing=0>
-                        <tr><td colspan=2 id='header'>
-                            <div class='title'>Tomato</div>
-                            <div class='version'>Version <% version(); %></div>
-                        </td></tr>
-                        <tr id='body'><td id='navi'><script type='text/javascript'>navi()</script></td>
-                        <td id='content'>
-                        <div id='ident'><% ident(); %></div>
                         
                         <!-- / / / -->
                         
@@ -361,16 +353,12 @@ function init()
                         
                         <!-- / / / -->
                         
-                        </td></tr>
-                        <tr><td id='footer' colspan=2>
                             <form>
                             <span id='footer-msg'></span>	
                             <input type='button' value='Save' id='save-button' onclick='save()'>
                             <input type='button' value='Cancel' id='cancel-button' onclick='javascript:reloadPage();'>
                             </form>
                         </div>
-                        </td></tr>
-                        </table>
                         <script type='text/javascript'>verifyFields(null, 1);</script>				
 					</td>
                     </tr>
