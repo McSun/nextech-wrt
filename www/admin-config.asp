@@ -5,7 +5,6 @@
 <title>Nex-Tech Lightning Jack Internet</title>
 <link rel="stylesheet" href="gray.css" type="text/css" />
 <script type='text/javascript' src='wrt.js'></script>
-<style type='text/css'>
 <script type='text/javascript'>
 
 //	<% nvram("et0macaddr,t_features,t_model_name"); %>
@@ -159,14 +158,6 @@ function resetButton()
                 <td><table width="90%">
                     <tr>
                       <td valign="top" align="left" style="padding-left: 10px;">
-                        <table id='container' cellspacing=0>
-                        <tr><td colspan=2 id='header'>
-                            <div class='title'>Tomato</div>
-                            <div class='version'>Version <% version(); %></div>
-                        </td></tr>
-                        <tr id='body'><td id='navi'><script type='text/javascript'>navi()</script></td>
-                        <td id='content'>
-                        <div id='ident'><% ident(); %></div>
                         
                         <!-- / / / -->
                         
@@ -208,10 +199,6 @@ function resetButton()
                         
                         <!-- / / / -->
                         
-                        </td></tr>
-                        <tr><td id='footer' colspan=2>&nbsp;</td></tr>
-                        </table>
-                        <br><br>					
 					</td>
                     </tr>
                   </table></td>
