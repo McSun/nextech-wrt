@@ -201,7 +201,6 @@ function save()
 						  <table id='container' cellspacing=0>
 						  <tr id='body'>
 						  <td id='content'>
-						  <div id='ident'><% ident(); %></div>
 						  
 						  <!-- / / / -->
 						  
