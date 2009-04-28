@@ -5,7 +5,13 @@
 <title>Nex-Tech Lightning Jack Internet</title>
 <link rel="stylesheet" href="gray.css" type="text/css" />
 <script type='text/javascript' src='wrt.js'></script>
+
+<!-- / / / -->
 <style type='text/css'>
+textarea {
+	width: 99%;
+	height: 10em;
+}
 #afu-progress {
 	text-align: center;
 	padding: 200px 0;
@@ -54,7 +60,8 @@ function upgrade()
 	fom.submit();
 }
 </script>
-</HEAD>
+
+</head>
 <body style="WIDTH: 100%; HEIGHT: 100%" bottomMargin="0" leftMargin="0" topMargin="0" rightMargin="0">
 <script language="javascript">
 {  
@@ -153,52 +160,45 @@ function upgrade()
                 <td><table width="90%">
                     <tr>
                       <td valign="top" align="left" style="padding-left: 10px;">
-                      <div id='afu-input'>
-							<div class='section-title'>Upgrade Firmware</div>
-							<div class='section'>
-								<form name='form_upgrade' method='post' action='upgrade.cgi' encType='multipart/form-data'>
-								<div id='box-input'>
-									Select the file to use:<br>
-									<input type='file' name='file' size='50' style='height:20px'> <input type='button' value='Upgrade' id='afu-upgrade-button' onclick='upgrade()' style='height:20px'>
-								</div>
-								</form>
-
-								<br>
-								<table border=0>
-								<tr><td>Current Version:</td><td>&nbsp; <% version(1); %></td></tr>
-								<script type='text/javascript'>
-								//	<% sysinfo(); %>
-								W('<tr><td>Free Memory:</td><td>&nbsp; ' + scaleSize(sysinfo.totalfreeram) + ' &nbsp; <small>(aprox. size that can be buffered completely in RAM)</small></td></tr>');
-								</script>
-								</table>
-
-							</div>
-						</div>
-
-						<div class='note-disabledw' style='display:none' id='jwarn'>
-						<b>Cannot upgrade if JFFS2 is enabled.</b><br><br>
-						An upgrade may overwrite the JFFS2 partition currently in use. Before upgrading,
-						please backup the contents of the JFFS2 partition, disable it, then reboot the router.<br><br><br>
-						<a href='admin-jffs2.asp'>Disable &raquo;</a>
-						</div>
-
-						<div id='afu-progress' style='display:none;margin:auto'>
-							<img src='spin.gif' style='vertical-align:baseline'> <span id='afu-time'>0:00</span><br>
-							Please wait while the firmware is uploaded &amp; flashed.<br>
-							<b>Warning:</b> Do not interrupt this browser or the router!<br>
-						</div>
-
-						<!-- / / / -->
-					
-						<script type='text/javascript'>
-						if (nvram.jffs2_on != '0') {
-							E('jwarn').style.display = '';
-							E('afu-input').style.display = 'none';
-						}
-						</script>
-					</td>
-                    </tr>
-                  </table></td>
+                        <div id='afu-input'>
+                            <div class='section-title'>Upgrade Firmware</div>
+                            <div class='section'>
+                                <form name='form_upgrade' method='post' action='upgrade.cgi' encType='multipart/form-data'>
+                                <div id='box-input'>
+                                    Select the file to use:<br>
+                                    <input type='file' name='file' size='50' style='height:20px'> <input type='button' value='Upgrade' id='afu-upgrade-button' onclick='upgrade()' style='height:20px'>
+                                </div>
+                                </form>
+                        
+                                <br>
+                                <table border=0>
+                                <tr><td>Current Version:</td><td>&nbsp; <% version(1); %></td></tr>
+                                <script type='text/javascript'>
+                                //	<% sysinfo(); %>
+                                W('<tr><td>Free Memory:</td><td>&nbsp; ' + scaleSize(sysinfo.totalfreeram) + ' &nbsp; <small>(aprox. size that can be buffered completely in RAM)</small></td></tr>');
+                                </script>
+                                </table>
+                        
+                            </div>
+                        </div>
+                        
+                        <div class='note-disabledw' style='display:none' id='jwarn'>
+                        <b>Cannot upgrade if JFFS2 is enabled.</b><br><br>
+                        An upgrade may overwrite the JFFS2 partition currently in use. Before upgrading,
+                        please backup the contents of the JFFS2 partition, disable it, then reboot the router.<br><br><br>
+                        <a href='admin-jffs2.asp'>Disable &raquo;</a>
+                        </div>
+                        
+                        <div id='afu-progress' style='display:none;margin:auto'>
+                            <img src='spin.gif' style='vertical-align:baseline'> <span id='afu-time'>0:00</span><br>
+                            Please wait while the firmware is uploaded &amp; flashed.<br>
+                            <b>Warning:</b> Do not interrupt this browser or the router!<br>
+                        </div>
+                        
+                        <!-- / / / -->
+                        
+                        </td></tr>
+                        </table></td>
               </tr>
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
@@ -248,5 +248,11 @@ function upgrade()
   </td>
   </tr>
 </table>
+<script type='text/javascript'>
+if (nvram.jffs2_on != '0') {
+	E('jwarn').style.display = '';
+	E('afu-input').style.display = 'none';
+}
+</script>
 </body>
 </HTML>
