@@ -153,10 +153,7 @@ function upgrade()
                 <td><table width="90%">
                     <tr>
                       <td valign="top" align="left" style="padding-left: 10px;">
-	
-						<!-- / / / -->
-
-						<div id='afu-input'>
+                      <div id='afu-input'>
 							<div class='section-title'>Upgrade Firmware</div>
 							<div class='section'>
 								<form name='form_upgrade' method='post' action='upgrade.cgi' encType='multipart/form-data'>
@@ -199,9 +196,6 @@ function upgrade()
 							E('afu-input').style.display = 'none';
 						}
 						</script>
-					
-					
-					
 					</td>
                     </tr>
                   </table></td>
