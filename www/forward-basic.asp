@@ -4,12 +4,38 @@
 <link rel="shortcut icon" href="favicon.ico">
 <title>Nex-Tech Lightning Jack Internet</title>
 <link rel="stylesheet" href="gray.css" type="text/css" />
+<script type='text/javascript' src='wrt.js'></script>
 <style type='text/css'>
 textarea {
 	width: 99%;
 	height: 10em;
 }
+#fo-grid .co1 {
+	width: 25px;
+	text-align: center;
+}
+#fo-grid .co2 {
+	width: 70px;
+}
+#fo-grid .co3 {
+	width: 120px;
+}
+#fo-grid .co4 {
+	width: 80px;
+}
+#fo-grid .co5 {
+	width: 55px;
+}
+#fo-grid .co6 {
+	width: 110px;
+}
+#fo-grid .co7 {
+	width: 300px;
+}
+
 </style>
+</style>
+<script type='text/javascript' src='debug.js'></script>
 <script type='text/javascript'>
 
 //	<% nvram("portforward"); %>
