@@ -892,9 +892,8 @@ function save()
                             <span id='footer-msg'></span>
                             <input type='button' value='Save' id='save-button' onclick='save()'>
                             <input type='button' value='Cancel' id='cancel-button' onclick='reloadPage();'>
-                        <script type='text/javascript'>earlyInit()</script>					
-					</td>
-                    </tr>
+                        <script type='text/javascript'>earlyInit()</script>	
+                        </form>				
                   </table></td>
               </tr>
             </table></td>
