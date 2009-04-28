@@ -10,6 +10,18 @@ textarea {
 	width: 99%;
 	height: 10em;
 }
+#res-over-grid .co1 {
+	width: 40%;
+}
+#res-over-grid .co2 {
+	width: 60%;
+}
+#res-over-grid .footer {
+	text-align: right;
+}
+#res-over-add {
+	width: 100px;
+}
 </style>
 <script type='text/javascript'>
 //	<% nvram(''); %>	// http_id
@@ -181,7 +193,7 @@ function init()
                       <td valign="top" align="left" style="padding-left: 10px;">
 						<form name='_fom' id='_fom' method='post' action='tomato.cgi'>
                         <table id='container' cellspacing=0>
-                        <tr id='body'><td id='navi'><script type='text/javascript'>navi()</script></td>
+                        <tr id='body'>
                         <td id='content'>
                         <div id='ident'><% ident(); %></div>
                         
