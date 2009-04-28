@@ -4,10 +4,22 @@
 <link rel="shortcut icon" href="favicon.ico">
 <title>Nex-Tech Lightning Jack Internet</title>
 <link rel="stylesheet" href="gray.css" type="text/css" />
+<script type='text/javascript' src='wrt.js'></script>
 <style type='text/css'>
 textarea {
 	width: 99%;
 	height: 10em;
+}
+#txt {
+	width: 550px;
+	white-space: nowrap;
+}
+#bwm-controls {
+	text-align: right;
+	margin-right: 5px;
+	margin-top: 5px;
+	float: right;
+	visibility: hidden;
 }
 </style>
 <script type='text/javascript' src='debug.js'></script>
