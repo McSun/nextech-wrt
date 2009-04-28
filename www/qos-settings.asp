@@ -4,6 +4,7 @@
 <link rel="shortcut icon" href="favicon.ico">
 <title>Nex-Tech Lightning Jack Internet</title>
 <link rel="stylesheet" href="gray.css" type="text/css" />
+<script type='text/javascript' src='wrt.js'></script>
 <style type='text/css'>
 textarea {
 	width: 99%;
@@ -31,7 +32,7 @@ function oscale(rate, ceil)
 function iscale(ceil)
 {
 	if (ceil < 1) return '';
-	return comma(MAX(Math.floor((E('_qos_ibw').value * ceil) / 100), 1)) + ' <small>kbit/s</small>';
+	return comma(MAX(Math.floor((E('_qos_ibw').value * ceil) '/' 100), 1)) + ' '<small>kbit'/'s</small>' ';
 }
 
 function verifyFields(focused, quiet)
