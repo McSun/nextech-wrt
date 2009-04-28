@@ -423,7 +423,7 @@ function earlyInit()
                       <td valign="top" align="left" style="padding-left: 10px;">
 						<form name='_fom' id='_fom' method='post' action='tomato.cgi'>
                         <table id='container' cellspacing=0>
-                        <tr id='body'><td id='navi'><script type='text/javascript'>navi()</script></td>
+                        <tr id='body'>
                         <td id='content'>
                         <div id='ident'><% ident(); %></div>
                         
