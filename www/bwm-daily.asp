@@ -4,6 +4,7 @@
 <link rel="shortcut icon" href="favicon.ico">
 <title>Nex-Tech Lightning Jack Internet</title>
 <link rel="stylesheet" href="gray.css" type="text/css" />
+<script type='text/javascript' src='wrt.js'></script>
 <style type='text/css'>
 textarea {
 	width: 99%;
@@ -11,7 +12,108 @@ textarea {
 }
 </style>
 <script type='text/javascript'>
-JS GOES HERE
+
+//	<% nvram("wan_ifname,lan_ifname,rstats_enable"); %>
+try {
+//	<% bandwidth("daily"); %>
+}
+catch (ex) {
+	daily_history = [];
+}
+rstats_busy = 0;
+if (typeof(daily_history) == 'undefined') {
+	daily_history = [];
+	rstats_busy = 1;
+}
+
+function save()
+{
+	cookie.set('daily', scale, 31);
+}
+
+function genData()
+{
+	var w, i, h, t;
+	
+	w = window.open('', 'tomato_data_d');
+	w.document.writeln('<pre>');
+	for (i = 0; i < daily_history.length; ++i) {
+		h = daily_history[i];
+		t = getYMD(h[0]);		
+		w.document.writeln([t[0], t[1] + 1, t[2], h[1], h[2]].join(','));
+	}
+	w.document.writeln('</pre>');
+	w.document.close();
+}
+
+function getYMD(n)
+{
+	// [y,m,d]
+	return [(((n >> 16) & 0xFF) + 1900), ((n >>> 8) & 0xFF), (n & 0xFF)];
+}
+
+function redraw()
+{
+	var h;
+	var grid;
+	var rows;
+	var ymd;
+	var d;
+	var lastt;
+	var lastu, lastd;
+
+	if (daily_history.length > 0) {
+		ymd = getYMD(daily_history[0][0]);
+		d = new Date((new Date(ymd[0], ymd[1], ymd[2], 12, 0, 0, 0)).getTime() - ((30 - 1) * 86400000));
+		E('last-dates').innerHTML = '(' + ymdText(ymd[0], ymd[1], ymd[2]) + ' to ' + ymdText(d.getFullYear(), d.getMonth(), d.getDate()) + ')';
+
+		lastt = ((d.getFullYear() - 1900) << 16) | (d.getMonth() << 8) | d.getDate();
+	}			
+	
+	lastd = 0;
+	lastu = 0;
+	rows = 0;
+	block = '';
+	gn = 0;
+
+	grid = '<table class="bwmg" cellspacing="1">';
+	grid += makeRow('header', 'Date', 'Download', 'Upload', 'Total');
+	
+	for (i = 0; i < daily_history.length; ++i) {
+		h = daily_history[i];
+		ymd = getYMD(h[0]);
+		grid += makeRow(((rows & 1) ? 'odd' : 'even'), ymdText(ymd[0], ymd[1], ymd[2]), rescale(h[1]), rescale(h[2]), rescale(h[1] + h[2]));
+		++rows;
+
+		if (h[0] >= lastt) {
+			lastd += h[1];
+			lastu += h[2];
+		}
+	}
+
+	E('bwm-daily-grid').innerHTML = grid + '</table>';
+
+	E('last-dn').innerHTML = rescale(lastd);
+	E('last-up').innerHTML = rescale(lastu);
+	E('last-total').innerHTML = rescale(lastu + lastd);
+}
+
+function init()
+{
+	var s;
+
+	if (nvram.rstats_enable != '1') return;
+
+	if ((s = cookie.get('daily')) != null) {
+		if (s.match(/^([0-2])$/)) {
+			E('scale').value = scale = RegExp.$1 * 1;
+		}
+	}
+	
+	initDate('ymd');	
+	daily_history.sort(cmpHist);
+	redraw();
+}
 </script>
 <body onLoad="init()" style="WIDTH: 100%; HEIGHT: 100%" bottomMargin="0" leftMargin="0" topMargin="0" rightMargin="0">
 <script language="javascript">
