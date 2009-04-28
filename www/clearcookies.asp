@@ -111,7 +111,7 @@ textarea {
                     <tr>
                       <td valign="top" align="left" style="padding-left: 10px;">
                         <table id='container' cellspacing=0>
-                        <tr id='body'><td id='navi'><script type='text/javascript'>navi()</script></td>
+                        <tr id='body'>
                         <td id='content'>
                         <div id='ident'><% ident(); %></div>
                         
