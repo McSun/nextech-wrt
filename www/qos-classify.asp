@@ -4,11 +4,81 @@
 <link rel="shortcut icon" href="favicon.ico">
 <title>Nex-Tech Lightning Jack Internet</title>
 <link rel="stylesheet" href="gray.css" type="text/css" />
+<script type='text/javascript' src='wrt.js'></script>
 <style type='text/css'>
 textarea {
 	width: 99%;
 	height: 10em;
 }
+#qg div {
+	padding: 0 0 1px 0;
+	margin: 0;
+}
+
+#qg .co1 {
+	width: 370px;
+}
+#qg .co2 {
+	width: 80px;
+}
+#qg .co3 {
+	width: 300px;
+}
+
+#qg .x1a {
+	width: 35%;
+	float: left;
+}
+#qg .x1b {
+	width: 64%;
+	float: left;
+}
+
+#qg .x2a {
+	width: 35%;
+	float: left;
+	clear: left;
+}
+#qg .x2b {
+	width: 23%;
+	float: left;
+}
+#qg .x2c {
+	width: 41%;
+	float: left;
+}
+
+#qg .x3a {
+	width: 40%;
+	float: left;
+	clear: left;
+}
+#qg .x3b {
+	width: 60%;
+	float: left;
+}
+
+#qg .x4a {
+	float: left;
+	clear: left;
+	width: 70px;
+}
+#qg .x4b {
+	float: left;
+	padding: 2px 8px 0 8px;
+	width: 10px;
+	text-align: center;
+}
+#qg .x4c {
+	float: left;
+	width: 70px;
+}
+#qg .x4d {
+	float: left;
+	padding: 2px 0 0 8px;
+	width: 100px;
+}
+
 </style>
 <script type='text/javascript'>
 
