@@ -772,7 +772,7 @@ function save()
                         
                         
                         <div class='section-title'>WAN / Internet</div>
-                        <div class='section'>
+                        <div class='section' onMouseOver="replaceElement('wan')" onMouseOut="removeElement('wan')">
                         <script type='text/javascript'>
                         createFieldTable('', [
                             { text: '<span id="_wan_na"><i>Wireless Ethernet Bridge Mode</i></span>' },
@@ -806,7 +806,7 @@ function save()
                         ipp = nvram.lan_ipaddr.split('.').splice(0, 3).join('.');
                         
                         createFieldTable('', [
-                            { title: 'Router IP Address', name: 'lan_ipaddr', type: 'text', maxlen: 15, size: 17, value: nvram.lan_ipaddr },
+                            { title: 'Router IP Address', name: 'lan_ipaddr', type: 'text', maxlen: 15, size: 17, value: nvram.lan_ipaddr onMouseOver="replaceElement('networkName')" onMouseOut="removeElement('networkName')" onMouseOver="replaceElement('RIPadd')" onMouseOut="removeElement('RIPadd')"},
                             { title: 'Subnet Mask', name: 'lan_netmask', type: 'text', maxlen: 15, size: 17, value: nvram.lan_netmask },
                             { title: 'Default Gateway', name: 'lan_gateway', type: 'text', maxlen: 15, size: 17, value: nvram.lan_gateway },
                             { title: 'Static DNS', name: 'f_dns_1', type: 'text', maxlen: 15, size: 17, value: dns[0] || '0.0.0.0' },
@@ -898,18 +898,31 @@ function save()
               </tr>
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-              <table id="DefaultRightColumn_Table1" class="RightColumn" cellspacing="0" cellpadding="10" border="0" style="WIDTH: 5%; HEIGHT: 100%">
-                <tr id="DefaultRightColumn_TableRow3">
-                  <td id="DefaultRightColumn_TableCell3" style="WIDTH: 166px; HEIGHT: 10px"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow1">
-                  <td id="DefaultRightColumn_TableCell1" align="Center" valign="Top" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow2">
-                  <td id="DefaultRightColumn_TableCell2" align="Center" valign="Middle" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-              </table>
-            </div></td>
+            <h3>Brainy Bunch Help</h3>
+			<div id="wan" style="display:none">
+			<p>Type - Type of protocol used to connect to your service.</p>
+			<p>MTU - Determines the maximum number of bytes your link can transmit.  For best results default is recommended as other options may cause problems.</p>
+			</div>
+            <p id="RIPadd" style="display:none"> The address that  your computers will connect to for the router, also this is the address you will connect to with your browser to edit your router.</p>
+            <p> Used to show what  class of address and what subnet that address is in.  Recommended address is 255.255.255.0.</p>
+            <p> This allows you to designate a server for DNS instead of using default. Leaving  this blank is recommended.</p>
+            <p> This allows you to automatically obtain an IP address.</p>
+            <p> This allows you to set in a range of address for your connected. devices. Recommended is to use the default listed.</p>
+            <p> This is how long devices will hold on to an IP address before trying to acquire another(or the same one) from the router.</p>
+            <p> Similar to netball name service, only add address if needed with pre-windows 2000 operating systems or operating systems that need WINS.</p>
+          
+            <p> Physical address of  wireless interface, may need for certain security options.</p>
+            <p> Sets which mode your  wireless router will communicate as.</p>
+            <p> Sets which mode your  router will use.  You can use mixed, B only or G only.  This  would depend on what type of 						wireless devices you have.</p>
+            <p> Sets what your wireless  network will be called and broadcast as to allow you to  connect.</p>
+            <p> Sets weather or not your  Wireless router will broadcast your SSID which anyone with a  wireless card will be able to see if set.</p>
+            <p> Sets the channel and  frequency your router will broadcast at.  You may also hit scan  to locate strongest channel nearest your location.</p>
+            <p> Sets which type of  security setup you want to use. This will prevent unauthorized  individuals from connecting to your network even if they can see it. WPA is recommended for security.</p>
+            <p> Type of encryption that will be used over wireless link to prevent someone from  knowing your shared key.  AES or PKS Preshared Key is recommended for encryption.</p>
+            <p> Password or set of characters that will be needed for computers in your network to  have to be able to connect to your wireless network.  More complex passwords are better as they are harder to break</p>
+            <p> Number of seconds before your computer renews</p>
+            <p> authentication of the shared key.</p>
+          </div></td>
         </tr>
       </table></td>
   </tr>

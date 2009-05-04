@@ -2175,6 +2175,17 @@ function console(s)
 {
 }
 
+//------------------------------------------------------------------------------------
 
 
+//help include
 
+
+function removeElement(id)
+{
+document.getElementById(id).style.display="none";
+}
+function replaceElement(id)
+{
+document.getElementById(id).style.display="inline";
+}

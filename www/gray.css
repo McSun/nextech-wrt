@@ -521,4 +521,19 @@ table.EditBox tr
 
 .section-title {
 	font-weight: bold;
+}#RightColumn {
+	color: #FFFFFF;
+	background-color: #9A0000;
+	border: 2px solid #000000;
+	padding: 5px;
+	position: absolute;
+	right: 20px;
+	height: 100%;
+	width: 200px;
+}
+#RightColumn h3 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFFFFF;
+	margin-bottom: 5px;
 }
