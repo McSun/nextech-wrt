@@ -367,18 +367,18 @@ function init()
               </tr>
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-              <table id="DefaultRightColumn_Table1" class="RightColumn" cellspacing="0" cellpadding="10" border="0" style="WIDTH: 5%; HEIGHT: 100%">
-                <tr id="DefaultRightColumn_TableRow3">
-                  <td id="DefaultRightColumn_TableCell3" style="WIDTH: 166px; HEIGHT: 10px"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow1">
-                  <td id="DefaultRightColumn_TableCell1" align="Center" valign="Top" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow2">
-                  <td id="DefaultRightColumn_TableCell2" align="Center" valign="Middle" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-              </table>
-            </div></td>
+            <h3>Brainy Bunch Help</h3>
+            <p> Check this to enable bandwidth monitoring on the router.</p>
+            <p> Save History Location &ndash; By default  bandwidth history is save temporary in RAM memory but you can change where the router will save it if you would like a  permanent record.</p>
+            <p> This will allow  you to select how frequently you want the router to test bandwidth and report it.</p>
+            <p> If checked will save bandwidth history during shutdown or restart of router.</p>
+            <p> If checked will  create a new file resetting all current bandwidth information.</p>
+            <p> If checked will  create a backup of the bandwidth history in case the log is accidentally erased.</p>
+            <p> Enter  which day of the month you would prefer to start monitoring  bandwidth.</p>
+            <p> List excluded interfaces if you only want bandwidth information on certain ones.  Also separate each interface in the box by a comma.</p>
+            <p> In the box is listed the name of the file that your bandwidth information will be backed  up to. Hit backup to save the file or change the file name and then  hit backup.</p>
+            <p> Type the name of the file you wish to use to restore bandwidth information, or browse to locate file.</p>
+          </div></td>
         </tr>
       </table></td>
   </tr>

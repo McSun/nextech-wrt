@@ -532,6 +532,7 @@ table.EditBox tr
 	width: 200px;
 }
 #RightColumn h3 {
+	font-size:23px;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: #FFFFFF;

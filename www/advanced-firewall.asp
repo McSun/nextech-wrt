@@ -161,18 +161,12 @@ function save()
               </tr>
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-              <table id="DefaultRightColumn_Table1" class="RightColumn" cellspacing="0" cellpadding="10" border="0" style="WIDTH: 5%; HEIGHT: 100%">
-                <tr id="DefaultRightColumn_TableRow3">
-                  <td id="DefaultRightColumn_TableCell3" style="WIDTH: 166px; HEIGHT: 10px"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow1">
-                  <td id="DefaultRightColumn_TableCell1" align="Center" valign="Top" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow2">
-                  <td id="DefaultRightColumn_TableCell2" align="Center" valign="Middle" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-              </table>
-            </div></td>
+            <h3>Brainy Bunch Help</h3>
+            <p> Check to allow  router to respond to ping requests </p>
+            <p> Check to allow  multiple IP packets sent across network </p>
+            <p> Set this to have  hosts on network communicate as if they were on 2 separate networks. Helps with LAN gaming.</p>
+            <p> Set this to guard  against SYN flood attacks which could compromise your network.</p>
+          </div></td>
         </tr>
       </table></td>
   </tr>

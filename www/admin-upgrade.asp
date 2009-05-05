@@ -202,18 +202,10 @@ function upgrade()
               </tr>
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-              <table id="DefaultRightColumn_Table1" class="RightColumn" cellspacing="0" cellpadding="10" border="0" style="WIDTH: 5%; HEIGHT: 100%">
-                <tr id="DefaultRightColumn_TableRow3">
-                  <td id="DefaultRightColumn_TableCell3" style="WIDTH: 166px; HEIGHT: 10px"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow1">
-                  <td id="DefaultRightColumn_TableCell1" align="Center" valign="Top" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow2">
-                  <td id="DefaultRightColumn_TableCell2" align="Center" valign="Middle" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-              </table>
-            </div></td>
+            <h3>Brainy Bunch Help</h3>
+            <p>Use this page to select different firmware image.  Leaving current firmware is recommended unless update is issued by Nextech.  Updating firmware can have unforeseen results.</p>
+            <p>Type in file name and location or  browse to locate firmware image for updating.</p>
+          </div></td>
         </tr>
       </table></td>
   </tr>

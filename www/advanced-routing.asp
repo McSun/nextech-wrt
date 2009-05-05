@@ -269,18 +269,21 @@ function init()
               </tr>
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-              <table id="DefaultRightColumn_Table1" class="RightColumn" cellspacing="0" cellpadding="10" border="0" style="WIDTH: 5%; HEIGHT: 100%">
-                <tr id="DefaultRightColumn_TableRow3">
-                  <td id="DefaultRightColumn_TableCell3" style="WIDTH: 166px; HEIGHT: 10px"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow1">
-                  <td id="DefaultRightColumn_TableCell1" align="Center" valign="Top" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow2">
-                  <td id="DefaultRightColumn_TableCell2" align="Center" valign="Middle" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-              </table>
-            </div></td>
+            <h3>Brainy Bunch Help</h3>
+            <p> Network IP address</p>
+            <p> Destination gateway for that network</p>
+            <p> Subnet mask of each  network which shows how the network is subnetted.</p>
+            <p> Shows the number of hops  for the fastest route.</p>
+            <p> Shows the port that the  router is connected to on that network. </p>
+            <p> Network IP address</p>
+            <p> Destination gateway for that network</p>
+            <p> Subnet mask of each  network which shows how the network is subnetted.</p>
+            <p> Shows the number of hops for  the fastest route.</p>
+<p> Shows the port that the  router is connected to on that network.</p>
+<p>Mode Changed from either Router or Gateway modes.  Router mode is default, and will act like a  normal router.  Setup as a gateway if connected to another router and this router will act like a switch by forwarding packets.</p>
+<p> RIPv1 and 2 Setup RIPv1 or  RIPv2 on the LAN and/or WAN networks for routing. Default is  recommended.</p>
+<p> Will prevent loops in the network traffic if using more then 1 router or switch.  Default is recommended.</p>
+          </div></td>
         </tr>
       </table></td>
   </tr>

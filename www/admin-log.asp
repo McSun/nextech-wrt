@@ -221,18 +221,19 @@ function save()
               </tr>
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-              <table id="DefaultRightColumn_Table1" class="RightColumn" cellspacing="0" cellpadding="10" border="0" style="WIDTH: 5%; HEIGHT: 100%">
-                <tr id="DefaultRightColumn_TableRow3">
-                  <td id="DefaultRightColumn_TableCell3" style="WIDTH: 166px; HEIGHT: 10px"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow1">
-                  <td id="DefaultRightColumn_TableCell1" align="Center" valign="Top" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow2">
-                  <td id="DefaultRightColumn_TableCell2" align="Center" valign="Middle" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-              </table>
-            </div></td>
+            <h3>Brain Bunch Help</h3>
+            <p> If setup will sent Syslog messages to a client(PC). This page is for advanced users only. Defaults are recommended.</p>
+            <p> If checked this will save the log to RAM temporary.  This is the recommended default.</p>
+            <p> If checked this will allow Syslog messages to be forwarded to a client on a PC.</p>
+            <p> Select time frame that you would like the router to start a new log.</p>
+            <p> Check this to log all access restriction traffic.</p>
+            <p> Check this to log all Cron  program traffic which is typically used for downloading of email, but also some running scripts on the router.</p>
+            <p> Check this to log  all DHCP traffic.  DHCP traffic is traffic required for IP address negotiation.</p>
+            <p> Check this to log all Network Time Protocol traffic.  This traffic updates the time on  the router.</p>
+            <p> Check this to log all Point to Point traffic.  This is used to connect to Nextech.</p>
+            <p> Check this to log any scheduling of processes that the router is using.</p>
+            <p> Change these drop down boxes to log all traffic to or from the router on either the outbound and/or the inbound interfaces.</p>
+          </div></td>
         </tr>
       </table></td>
   </tr>

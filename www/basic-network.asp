@@ -806,7 +806,7 @@ function save()
                         ipp = nvram.lan_ipaddr.split('.').splice(0, 3).join('.');
                         
                         createFieldTable('', [
-                            { title: 'Router IP Address', name: 'lan_ipaddr', type: 'text', maxlen: 15, size: 17, value: nvram.lan_ipaddr onMouseOver="replaceElement('networkName')" onMouseOut="removeElement('networkName')" onMouseOver="replaceElement('RIPadd')" onMouseOut="removeElement('RIPadd')"},
+                            { title: 'Router IP Address', name: 'lan_ipaddr', type: 'text', maxlen: 15, size: 17, value: nvram.lan_ipaddr },
                             { title: 'Subnet Mask', name: 'lan_netmask', type: 'text', maxlen: 15, size: 17, value: nvram.lan_netmask },
                             { title: 'Default Gateway', name: 'lan_gateway', type: 'text', maxlen: 15, size: 17, value: nvram.lan_gateway },
                             { title: 'Static DNS', name: 'f_dns_1', type: 'text', maxlen: 15, size: 17, value: dns[0] || '0.0.0.0' },
@@ -816,8 +816,7 @@ function save()
                             { title: 'IP Address Range', indent: 2, multi: [
                                 { name: 'dhcpd_startip', type: 'text', maxlen: 15, size: 17, value: nvram.dhcpd_startip, suffix: ' - ' },
                                 { name: 'dhcpd_endip', type: 'text', maxlen: 15, size: 17, value: nvram.dhcpd_endip, suffix: ' <i id="dhcp_count"></i>' }
-                            ] },
-                            
+                            ] },                            
                             { title: 'Lease Time', indent: 2, name: 'dhcp_lease', type: 'text', maxlen: 6, size: 8, suffix: ' <i>(minutes)</i>',
                                 value: (nvram.dhcp_lease > 0) ? nvram.dhcp_lease : 1440 },
                             { title: 'WINS', indent: 2, name: 'wan_wins', type: 'text', maxlen: 15, size: 17, value: nvram.wan_wins }

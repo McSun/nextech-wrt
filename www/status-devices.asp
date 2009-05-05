@@ -400,18 +400,16 @@ function init()
               </tr>
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-              <table id="DefaultRightColumn_Table1" class="RightColumn" cellspacing="0" cellpadding="10" border="0" style="WIDTH: 5%; HEIGHT: 100%">
-                <tr id="DefaultRightColumn_TableRow3">
-                  <td id="DefaultRightColumn_TableCell3" style="WIDTH: 166px; HEIGHT: 10px"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow1">
-                  <td id="DefaultRightColumn_TableCell1" align="Center" valign="Top" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow2">
-                  <td id="DefaultRightColumn_TableCell2" align="Center" valign="Middle" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-              </table>
-            </div></td>
+            <h3>Brainy Bunch Help</h3>
+            <p> First Item Listed In Chart Is Always  Your Gateway Address To Connect And Configure This Router.</p>
+            <p> Interface with connected devices</p>
+            <p> MAC addresses of connected devices</p>
+            <p> IP addresses of connected devices</p>
+            <p> Names of Devices Connected</p>
+            <p> Power presently received by  connection</p>
+            <p> Quality of signal</p>
+            <p> Time listing of how long device has had current IP address</p>
+          </div></td>
         </tr>
       </table></td>
   </tr>

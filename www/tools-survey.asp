@@ -393,18 +393,17 @@ function init()
               </tr>
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-              <table id="DefaultRightColumn_Table1" class="RightColumn" cellspacing="0" cellpadding="10" border="0" style="WIDTH: 5%; HEIGHT: 100%">
-                <tr id="DefaultRightColumn_TableRow3">
-                  <td id="DefaultRightColumn_TableCell3" style="WIDTH: 166px; HEIGHT: 10px"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow1">
-                  <td id="DefaultRightColumn_TableCell1" align="Center" valign="Top" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow2">
-                  <td id="DefaultRightColumn_TableCell2" align="Center" valign="Middle" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-              </table>
-            </div></td>
+            <h3>Brainy Bunch Help</h3>
+            <p> Last time wireless signal was located.</p>
+            <p> Name of network.</p>
+            <p> Broadcast ID of Mac address.</p>
+            <p> Amount of power from signal.</p>
+            <p> Amount of noise interfering in the signal to your location.</p>
+            <p> Level of signal quality. </p>
+            <p> Frequency Channel that the  signal is on.</p>
+            <p> Features on wireless network.</p>
+            <p> Signaling Rate on wireless network.</p>
+          </div></td>
         </tr>
       </table></td>
   </tr>
