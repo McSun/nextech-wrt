@@ -2110,10 +2110,10 @@ function createFieldTable(flags, desc)
 				break;
 			case 'password':
 			case 'text':
-				buf.push('<input type="' + f.type + '"' + name + ' value="' + escapeHTML(UT(f.value)) + '" maxlength=' + f.maxlen + (f.size ? (' size=' + f.size) : '') + common + ' onMouseOver="replaceElement(' + f.name + ')" onMouseOut="removeElement(' + f.name +')">');
+				buf.push('<input type="' + f.type + '"' + name + ' value="' + escapeHTML(UT(f.value)) + '" maxlength=' + f.maxlen + (f.size ? (' size=' + f.size) : '') + common + ' onMouseOver="replaceElement(\'' + f.name + '\')" onMouseOut="removeElement(\'' + f.name +'\')">');
 				break;
 			case 'select':
-				buf.push('<select' + name + common + ' onMouseOver="replaceElement(' + f.name + ')" onMouseOut="removeElement(' + f.name + ')">');
+				buf.push('<select' + name + common + ' onMouseOver="replaceElement(\'' + f.name + '\')" onMouseOut="removeElement(\'' + f.name + '\')">');
 				for (i = 0; i < f.options.length; ++i) {
 					a = f.options[i];
 					if (a.length == 1) a.push(a[0]);
