@@ -2103,17 +2103,17 @@ function createFieldTable(flags, desc)
 
 			switch (f.type) {
 			case 'checkbox':
-				buf.push('<input type="checkbox"' + name + (f.value ? ' checked' : '') + ' onclick="verifyFields(this, 1)"' + common + '>');
+				buf.push('<input type="checkbox"' + name + (f.value ? ' checked' : '') + ' onclick="verifyFields(this, 1)"' + common + ' onMouseOver="replaceElement(f.name)" onMouseOut="removeElement(f.name)">');
 				break;
 			case 'radio':
-				buf.push('<input type="radio"' + name + (f.value ? ' checked' : '') + ' onclick="verifyFields(this, 1)"' + common + '>');
+				buf.push('<input type="radio"' + name + (f.value ? ' checked' : '') + ' onclick="verifyFields(this, 1)"' + common + ' onMouseOver="replaceElement(f.name)" onMouseOut="removeElement(f.name)">');
 				break;
 			case 'password':
 			case 'text':
-				buf.push('<input type="' + f.type + '"' + name + ' value="' + escapeHTML(UT(f.value)) + '" maxlength=' + f.maxlen + (f.size ? (' size=' + f.size) : '') + common + '>');
+				buf.push('<input type="' + f.type + '"' + name + ' value="' + escapeHTML(UT(f.value)) + '" maxlength=' + f.maxlen + (f.size ? (' size=' + f.size) : '') + common + ' onMouseOver="replaceElement(f.name)" onMouseOut="removeElement(f.name)">');
 				break;
 			case 'select':
-				buf.push('<select' + name + common + '>');
+				buf.push('<select' + name + common + ' onMouseOver="replaceElement(f.name)" onMouseOut="removeElement(f.name)">');
 				for (i = 0; i < f.options.length; ++i) {
 					a = f.options[i];
 					if (a.length == 1) a.push(a[0]);
@@ -2122,7 +2122,7 @@ function createFieldTable(flags, desc)
 				buf.push('</select>');
 				break;
 			case 'textarea':
-				buf.push('<textarea' + name + common + '>' + escapeHTML(UT(f.value)) + '</textarea>');
+				buf.push('<textarea' + name + common + ' onMouseOver="replaceElement(f.name)" onMouseOut="removeElement(f.name)">' + escapeHTML(UT(f.value)) + '</textarea>');
 				break;
 			default:
 				if (f.custom) buf.push(f.custom);
