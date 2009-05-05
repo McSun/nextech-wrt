@@ -2103,10 +2103,10 @@ function createFieldTable(flags, desc)
 
 			switch (f.type) {
 			case 'checkbox':
-				buf.push('<input type="checkbox"' + name + (f.value ? ' checked' : '') + ' onclick="verifyFields(this, 1)"' + common + ' onMouseOver="replaceElement("' +f.name + '")" onMouseOut="removeElement("' + f.name + '")">');
+				buf.push('<input type="checkbox"' + name + (f.value ? ' checked' : '') + ' onclick="verifyFields(this, 1)"' + common + ' onMouseOver="replaceElement(\'' +f.name + '\')" onMouseOut="removeElement(\'' + f.name + '\')">');
 				break;
 			case 'radio':
-				buf.push('<input type="radio"' + name + (f.value ? ' checked' : '') + ' onclick="verifyFields(this, 1)"' + common + ' onMouseOver="replaceElement("' + f.name + '")" onMouseOut="removeElement("' + f.name + '")">');
+				buf.push('<input type="radio"' + name + (f.value ? ' checked' : '') + ' onclick="verifyFields(this, 1)"' + common + ' onMouseOver="replaceElement(\'' + f.name + '\')" onMouseOut="removeElement(\'' + f.name + '\')">');
 				break;
 			case 'password':
 			case 'text':
