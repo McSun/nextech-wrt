@@ -129,7 +129,7 @@ function save()
                         
                         
                         <div class='section-title'>Router Identification</div>
-                        <div class='section'>
+                        <div class='section' onMouseOver="replaceElement('routername')" onMouseOut="removeElement('routername')">
                         <script type='text/javascript'>
                         createFieldTable('', [
                             { title: 'Router Name', name: 'router_name', type: 'text', maxlen: 32, size: 34, value: nvram.router_name },
@@ -152,7 +152,7 @@ function save()
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
             <h3>Brainy Bunch Help</h3>
-            <p>Displays the name of your router on the network.</p>
+            <p id="routername" style="display:none">Displays the name of your router on the network.</p>
           </div></td>
         </tr>
       </table></td>

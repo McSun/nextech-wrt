@@ -327,21 +327,21 @@ function init()
                         <input type='hidden' name='sch_c3' value=''>
                         
                         <div class='section-title'>Reboot</div>
-                        <div class='section'>
+                        <div class='section' onMouseOver="replaceElement('reboot')" onMouseOut="removeElement('reboot')">
                         <script type='text/javascript'>
                         makeSched('rboot');
                         </script>
                         </div>
                         
                         <div class='section-title'>Reconnect</div>
-                        <div class='section'>
+                        <div class='section' onMouseOver="replaceElement('reconnect')" onMouseOut="removeElement('reconnect')">
                         <script type='text/javascript'>
                         makeSched('rcon');
                         </script>
                         </div>
                         
                         <div class='section-title'>Custom 1</div>
-                        <div class='section'>
+                        <div class='section' onMouseOver="replaceElement('backup')" onMouseOut="removeElement('backup')">
                         <script type='text/javascript'>
                         makeSched('c1', 1);
                         </script>
@@ -355,7 +355,7 @@ function init()
                         </div>
                         
                         <div class='section-title'>Custom 3</div>
-                        <div class='section'>
+                        <div class='section' onMouseOver="replaceElement('custom')" onMouseOut="removeElement('custom')">
                         <script type='text/javascript'>
                         makeSched('c3', 1);
                         </script>
@@ -373,9 +373,9 @@ function init()
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
             <h3>Brainy Bunch Help</h3>
-            <p> Setup this to automatically  reboot your router at a designated time</p>
-            <p> Setup this to reconnect  to Nextech at a designated time.</p>
-            <p> Setup custom  script to run at a designated time.</p>
+            <p id="reboot" style="display:none"> Setup this to automatically  reboot your router at a designated time</p>
+            <p id="reconnect" style="display:none"> Setup this to reconnect  to Nextech at a designated time.</p>
+            <p id="custom" style="display:none"> Setup custom  script to run at a designated time.</p>
           </div></td>
         </tr>
       </table></td>

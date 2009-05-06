@@ -263,7 +263,7 @@ function earlyInit()
                         }
                                         
                         createFieldTable('', [
-                            { title: 'Router Time', text: '<span id="clock"><% time(); %></span>' },
+                            { title: 'Router Time', text: '<span id="clock" onMouseOver="replaceElement('clock')" onMouseOut="removeElement('clock')"><% time(); %></span>' },
                             null,
                             { title: 'Time Zone', name: 'tm_sel', type: 'select', options: [
                                 ['custom','Custom...'],
@@ -348,7 +348,7 @@ function earlyInit()
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
             <h3>Brainy Bunch Help</h3>
-            <p> Time Router is up.</p>
+            <p id="clock" style="display:none"> Time Router is up.</p>
             <p id="tm_sel" style="display:none"> Time zone that your are in.</p>
             <p id="f_tm_dst" style="display:none"> Router will update time automatically for daylight savings.</p>
             <p id="f_tm_t2" style="display:none"> Timeframe that the router will wait before updating the time.</p>

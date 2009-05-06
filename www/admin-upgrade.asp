@@ -164,7 +164,7 @@ function upgrade()
                             <div class='section-title'>Upgrade Firmware</div>
                             <div class='section'>
                                 <form name='form_upgrade' method='post' action='upgrade.cgi' encType='multipart/form-data'>
-                                <div id='box-input'>
+                                <div id='box-input' onMouseOver="replaceElement('upgrade')" onMouseOut="removeElement('upgrade')">
                                     Select the file to use:<br>
                                     <input type='file' name='file' size='50' style='height:20px'> <input type='button' value='Upgrade' id='afu-upgrade-button' onclick='upgrade()' style='height:20px'>
                                 </div>
@@ -204,7 +204,7 @@ function upgrade()
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
             <h3>Brainy Bunch Help</h3>
             <p>Use this page to select different firmware image.  Leaving current firmware is recommended unless update is issued by Nextech.  Updating firmware can have unforeseen results.</p>
-            <p>Type in file name and location or  browse to locate firmware image for updating.</p>
+            <p id="upgrade" style="display:none">Type in file name and location or  browse to locate firmware image for updating.</p>
           </div></td>
         </tr>
       </table></td>

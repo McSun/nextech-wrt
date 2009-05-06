@@ -284,7 +284,7 @@ function init()
                         
                         <!-- / / / -->
                         
-                        <div class='section-title'>Bandwidth Monitoring</div>
+                        <div class='section-title' onMouseOver="replaceElement(')">Bandwidth Monitoring</div>
                         <div class='section' id='config-section'>
                         <form id='_fom' method='post' action='tomato.cgi'>
                         <input type='hidden' name='_nextpage' value='admin-bwm.asp'>
@@ -330,8 +330,8 @@ function init()
                         
                         <br>
                         
-                        <div class='section-title'>Backup</div>
-                        <div class='section' id='backup-section'>
+                        <div class='section-title' onMouseOver="replaceElement('backup')" onMouseOut="removeElement('backup')">Backup</div>
+                        <div class='section' id='backup-section' onMouseOver="replaceElement('backup')" onMouseOut="removeElement('backup')">
                             <form>
                             <script type='text/javascript'>
                             W("<input type='text' size='40' maxlength='64' id='backup-name' name='backup_name' onchange='backupNameChanged()' value='tomato_rstats_" + nvram.et0macaddr.replace(/:/g, '').toLowerCase() + "'>");
@@ -343,8 +343,8 @@ function init()
                         </div>
                         <br>
                         
-                        <div class='section-title'>Restore</div>
-                        <div class='section' id='restore-section'>
+                        <div class='section-title' onMouseOver="replaceElement('restore')" onMouseOut="removeElement('restore')">Restore</div>
+                        <div class='section' id='restore-section' onMouseOver="replaceElement('restore')" onMouseOut="removeElement('restore')">
                             <form id='restore-form' method='post' action='bwm/restore.cgi?_http_id=<% nv(http_id); %>' encType='multipart/form-data'>
                                 <input type='file' size='40' id='restore-name' name='restore_name'>
                                 <input type='button' name='f_restore_button' id='restore-button' value='Restore' onclick='restoreButton()'>
@@ -376,8 +376,8 @@ function init()
             <p id="f_bak" style="display:none"> If checked will  create a backup of the bandwidth history in case the log is accidentally erased.</p>
             <p id="rstats_offset" style="display:none"> Enter  which day of the month you would prefer to start monitoring  bandwidth.</p>
             <p id="rstats_exclude" style="display:none"> List excluded interfaces if you only want bandwidth information on certain ones.  Also separate each interface in the box by a comma.</p>
-            <p> In the box is listed the name of the file that your bandwidth information will be backed  up to. Hit backup to save the file or change the file name and then  hit backup.</p>
-            <p> Type the name of the file you wish to use to restore bandwidth information, or browse to locate file.</p>
+            <p id="backup" style="display:none"> In the box is listed the name of the file that your bandwidth information will be backed  up to. Hit backup to save the file or change the file name and then  hit backup.</p>
+            <p id ="restore" style="display:none"> Type the name of the file you wish to use to restore bandwidth information, or browse to locate file.</p>
           </div></td>
         </tr>
       </table></td>

@@ -435,11 +435,6 @@ form div.wide small {
 						  <form action="saved-basic.asp" method="post" enctype="multipart/form-data">
 						    <p><strong>All</strong> fields are required.</p>
 						    <fieldset><legend>Wireless Network Setup</legend>
-						      <div class="notes">
-						        <h4>Wireless Information</h4>
-								<p>Please enter a name by which to identify your wireless network</p>
-						        <p class="last">Also enter a password to secure your wireless network. Anyone who wants to join your network will need to enter this password.</p>
-						       </div>
 						      <div class="required">
 
 						        <label for="first_name">Network Name:</label>
@@ -457,12 +452,6 @@ form div.wide small {
 
 
 						    <fieldset><legend>Router Login Information</legend>
-						      <div class="notes">
-						        <h4>Login Information</h4>
-						        <p>Your username must both be at least 2 characters long and is case-sensitive. Please do not enter accented characters.</p>
-						        <p>We recommend that your password is not a word you can find in the dictionary, includes both capital and lower case letters, and contains at least one special character (1-9, !, *, _, etc.).</p>
-						       
-						      </div>
 						      <div class="required">
 
 						        <label for="username">Username:</label>
@@ -502,7 +491,7 @@ form div.wide small {
               </tr>
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-            <h3>the heading</h3>
+            <h3>Brainy Bunch Help </h3>
             <p>&nbsp; </p>
           </div></td>
         </tr>
