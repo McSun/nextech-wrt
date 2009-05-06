@@ -212,11 +212,12 @@ function save()
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
             <h3>Brainy Bunch Help</h3>
-            <p> Check this to cache DNS information for quick DNS lookup</p>
-            <p> Check this to use a permanent DNS service</p>
-            <p> Prevents intruders from access your network by preventing fake DNS lookups</p>
-            <p> Sets  the number of maximum IP address able to be given out</p>
-            <p> Sets a static time for how long a device will hold a address before requesting verification of address</p>
+            <p id="f_dns_dmdns" style="display:none"> Check this to cache DNS information for quick DNS lookup</p>
+            <p id="f_dns_addget" style="display:none"> Check this to use a permanent DNS service</p>
+            <p id="f_dns_intcpt" style="display:none"> Prevents intruders from access your network by preventing fake DNS lookups</p>
+            <p id="f_dns_lmax" style="display:none"> Sets  the number of maximum IP address able to be given out</p>
+            <p id="f_dhcpd_slt" style="display:none"> Sets a static time for how long a device will hold a address before requesting verification of address</p>
+			<p id="f_dhcpd_sltsel" style="display:none"> Sets a static time for how long a device will hold a address before requesting verification of address</p>
           </div></td>
         </tr>
       </table></td>

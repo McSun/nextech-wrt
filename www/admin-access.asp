@@ -361,20 +361,20 @@ function init()
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
             <h3>Brainy Bunch Help</h3>
-            <p> Pick which access type you will use.  HTTP is standard and HTTPS is HTTP secured.  You can pick either one or a combination of both.</p>
-            <p> This will set the port that the router will allow you to connect to when you access the web configuration interface.</p>
-            <p> This will let you  connect to your router to configure it if you at a distant location outside your network.  You can setup to use HTTP, HTTPS, or leave it disable. Recommend for security to leave it disabled.</p>
-            <p> This will allow you to access the web configuration interface while connected by wireless to the router 								if checked.  If not checked you will only have access if you are connected directly.</p>
-            <p>Will allow you to connect to your router using a Secure Shell(SSH) connection.</p>
-            <p> If checked it  will allow you to connect with Secure Shell(SHH) once the  router is restarted.</p>
-            <p> If checked it will  allow you to connect with Secure Shell(SHH) remote a distant location outside of your network.</p>
-            <p> This is the port designated to allow you to connect to configuration interface using Secure Shell(SSH).</p>
-            <p> If checked  this will require a password when trying to connect to the configuration interface using Secure 								Shell(SSH).</p>
-            <p> If you would like to setup Secure Shell(SSH) you can use a key to allow  for more security.  However this is not 						required, and password only is recommended in most cases.</p>
-            <p>Will block the IP address or range of IP address from access the configuration 									interface of the router.</p>
-            <p> Will allow you to connect to your router using a Telnet connection.</p>
-            <p> If checked  will allow you to connect with Telnet after a startup of the  router.</p>
-            <p> Enter password for access to your router. The more characters and numbers in your password the better secured it will be.</p>
+            <p id="f_http_local" style="display:none"> Pick which access type you will use.  HTTP is standard and HTTPS is HTTP secured.  You can pick either one or a combination of both.</p>
+            <p id="http_lanport" style="display:none"> This will set the port that the router will allow you to connect to when you access the web configuration interface.</p>
+            <p id="f_http_remote" style="display:none"> This will let you  connect to your router to configure it if you at a distant location outside your network.  You can setup to use HTTP, HTTPS, or leave it disable. Recommend for security to leave it disabled.</p>
+            <p id="http_wanport" style="display:none"> This will allow you to access the web configuration interface while connected by wireless to the router 								if checked.  If not checked you will only have access if you are connected directly.</p>
+            <p id="f_ssh_eas" style="display:none">Will allow you to connect to your router using a Secure Shell(SSH) connection.</p>
+            <p id="f_http_local" style="display:none"> If checked it  will allow you to connect with Secure Shell(SSH) once the  router is restarted.</p>
+            <p id="f_ssh_remote" style="display:none"> If checked it will  allow you to connect with Secure Shell(SSH) remote a distant location outside of your network.</p>
+            <p id="sshd_rport" style="display:none"> This is the port designated to allow you to connect to configuration interface using Secure Shell(SSH).</p>
+            <p id="f_sshd_pass" style="display:none"> If checked  this will require a password when trying to connect to the configuration interface using Secure 								Shell(SSH).</p>
+            <p id="sshd_authkeys" style="display:none"> If you would like to setup Secure Shell(SSH) you can use a key to allow  for more security.  However this is not 						required, and password only is recommended in most cases.</p>
+            <p id="rmgt_sip" style="display:none">Will block the IP address or range of IP address from accessing the configuration interface of the router.</p>
+            <p id="f_telnetd_eas" style="display:none"> Will allow you to connect to your router using a Telnet connection.</p>
+            <p id="telnetd_port" style="display:none"> If checked  will allow you to connect with Telnet after a startup of the  router.</p>
+            <p id="set_password_1" style="display:none"> Enter password for access to your router. The more characters and numbers in your password the better secured it will be.</p>
           </div></td>
         </tr>
       </table></td>

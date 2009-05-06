@@ -162,10 +162,10 @@ function save()
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
             <h3>Brainy Bunch Help</h3>
-            <p> Check to allow  router to respond to ping requests </p>
-            <p> Check to allow  multiple IP packets sent across network </p>
-            <p> Set this to have  hosts on network communicate as if they were on 2 separate networks. Helps with LAN gaming.</p>
-            <p> Set this to guard  against SYN flood attacks which could compromise your network.</p>
+            <p id="f_icmp" style="display:none"> Check to allow  router to respond to ping requests </p>
+            <p id="f_multicast" style="display:none"> Check to allow  multiple IP packets sent across network </p>
+            <p id="nf_loopback" style="display:none"> Set this to have  hosts on network communicate as if they were on 2 separate networks. Helps with LAN gaming.</p>
+            <p id="f_syncookies" style="display:none"> Set this to guard  against SYN flood attacks which could compromise your network.</p>
           </div></td>
         </tr>
       </table></td>
