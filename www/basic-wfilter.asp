@@ -252,8 +252,8 @@ function init()
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
             <h3>Brainy Bunch Help</h3>
-            <p Mac Address of Wireless device you wish to permit or block.</p>
-            <p Name or description of Wireless device you wish to permit or block.</p>
+            <p> Mac Address of Wireless device you wish to permit or block.</p>
+            <p> Name or description of Wireless device you wish to permit or block.</p>
           </div></td>
         </tr>
       </table></td>

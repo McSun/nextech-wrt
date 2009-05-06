@@ -349,11 +349,11 @@ function earlyInit()
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
             <h3>Brainy Bunch Help</h3>
             <p> Time Router is up.</p>
-            <p> Time zone that your are in.</p>
-            <p> Router will update time automatically for daylight savings.</p>
-            <p> Timeframe that the router will wait before updating the time.</p>
-            <p> Will update time if selected. </p>
-            <p> Select  which service you wish to recieve the updated time from.</p>
+            <p id="tm_sel" style="display:none"> Time zone that your are in.</p>
+            <p id="f_tm_dst" style="display:none"> Router will update time automatically for daylight savings.</p>
+            <p id="f_tm_t2" style="display:none"> Timeframe that the router will wait before updating the time.</p>
+            <p id="ntp_updates" style="display:none"> Will update time if selected. </p>
+            <p id="f_ntp_tdod" style="display:none"> Select  which service you wish to recieve the updated time from.</p>
           </div></td>
         </tr>
       </table></td>

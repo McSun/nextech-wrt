@@ -514,9 +514,8 @@ function init()
             </table></td>
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
             <h3>Brainy Bunch Help</h3>
-            <p> Dynamic Address For DNS Server, using default is recommended for easy setup.</p>	
-            <p> Select the DNS service you wish to use. </p>
-            <p> Select the DNS service you wish to use. </p>
+            <p id="f_ddnsx_ip" style="display:none"> Dynamic Address For DNS Server, using default is recommended for easy setup.</p>	
+            <p id="f_service" style="display:none"> Select the DNS service you wish to use. </p>
           </div></td>
         </tr>
       </table></td>

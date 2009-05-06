@@ -319,7 +319,7 @@ function init()
           <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
             <h3>Brainy Bunch Help</h3>
             <p> Enter the  MAC address of the device you want to have a permanate ip address. </p>	
-            <p> Enter the permanate IP address you wish to assign to your PC. </p>
+            <p> Enter the permenant IP address you wish to assign to your PC. </p>
             <p> Name of device  you are going to use permanate IP address with. </p>
           </div></td>
         </tr>
