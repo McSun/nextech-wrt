@@ -490,10 +490,7 @@ form div.wide small {
                   </table></td>
               </tr>
             </table></td>
-          <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-            <h3>Brainy Bunch Help </h3>
-            <p>&nbsp; </p>
-          </div></td>
+          <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%">&nbsp;</td>
         </tr>
       </table></td>
   </tr>
