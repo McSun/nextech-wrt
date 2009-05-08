@@ -331,7 +331,7 @@ form div.wide small {
 }
 </style>
 <script type='text/javascript'>
-//	<% nvram("wl_net_mode,wl_passphrase,wl_radio,wl_ssid,wl_wpa_gtk_rekey,wl_wpa_psk,wl_auth"); %>
+//	<% nvram("wl_net_mode,wl_radio,wl_ssid,wl_wpa_psk"); %>
 
 
 </script>
@@ -448,13 +448,11 @@ form div.wide small {
 						       </div>
 						      <div class="required">
 								<script type='text/javascript'>
-								if (nvram.wl_radio == '1') && (nvram.wl_net_mode != 'disabled') {
-									document.write("Wireless is enabled.")
+								if (nvram.wl_radio == '1' && nvram.wl_net_mode != 'disabled') {
+									document.write("Wireless is currently enabled.")
 								} else {
-									document.write("Wireless is disabled.")
+									document.write("Wireless is currently disabled.")
 								}
-
-
 								</script>
 								
 						        <label for="first_name">Network Name:</label>
@@ -474,30 +472,25 @@ form div.wide small {
 						    </fieldset>
 
 
-
+							
 						    <fieldset><legend>Router Login Information</legend>
 						      <div class="notes">
 						        <h4>Login Information</h4>
-						        <p>Your username must both be at least 2 characters long and is case-sensitive. Please do not enter accented characters.</p>
+						        
 						        <p>We recommend that your password is not a word you can find in the dictionary, includes both capital and lower case letters, and contains at least one special character (1-9, !, *, _, etc.).</p>
 						       
 						      </div>
-						      <div class="required">
 
-						        <label for="username">Username:</label>
-						        <input type="text" name="username" id="username" class="inputText" size="10" maxlength="20" value="" />
-						        <small>May only contain letters, numbers, and underscore (_) and 2-20 characters long.</small>
-						      </div>
 						      <div class="required">
 
 						        <label for="password">Password:</label>
-						        <input type="password" name="password" id="password" class="inputPassword" size="10" maxlength="25" value="" />
+						        <input type="password" name="password" id="password" class="inputPassword" size="10" maxlength="25" value="************" />
 						        <small>Must be 8-25 characters long.</small>
 						      </div>
 						      <div class="required">
 
 						        <label for="confirm_password">Please re-enter your password:</label>
-						        <input type="password" name="confirm_password" id="confirm_password" class="inputPassword" size="10" maxlength="25" value="" />
+						        <input type="password" name="confirm_password" id="confirm_password" class="inputPassword" size="10" maxlength="25" value="************" />
 						        <small>Must match the password you entered just above.</small>
 						      </div>
 						      
