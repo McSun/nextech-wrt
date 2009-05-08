@@ -465,8 +465,10 @@ form div.wide small {
 						      </div>
 						
 								<script type='text/javascript'>
+							if (nvram.wl_radio == '1' && nvram.wl_net_mode != 'disabled') {
 								document.easy.ssid.value = nvram.wl_ssid;
 								document.easy.key.value = nvram.wl_wpa_psk;
+							}
 								</script>
 
 						    </fieldset>

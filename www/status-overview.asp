@@ -229,15 +229,16 @@ function init()
 								<a href="basic-setup.asp"><img src="easy-setup.png" border="0"></a>
 							</td>
 							<td valign="middle" width="50%" style="font-size: 18px;">
+								<div id="easy-status"></div>
 								<script type='text/javascript'>
 								if (nvram.wl_radio == '1' && nvram.wl_net_mode != 'disabled') {
-									document.write("Your router is setup. <br/>
+									document.getElementById('easy-status').innerHTML="Your router is setup. <br/>
 									Run Easy Setup to make changes. <br/><br/>
-									Or use the menu on the left for Advanced Setup.")
+									Or use the menu on the left for Advanced Setup.";
 								} else {
-									document.write("Your router has not been setup. <br/>
+									document.getElementById('easy-status').innerHTML="Your router has not been setup. <br/>
 									Click the Easy Setup button to begin. <br/><br/>
-									Or use the menu on the left for Advanced Setup.")
+									Or use the menu on the left for Advanced Setup.";
 								}
 								</script>
 							</td>
