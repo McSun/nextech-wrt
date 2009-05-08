@@ -336,7 +336,7 @@ form div.wide small {
 function save()
 {
 
-	form.submit(fom, 1);
+	form.submit(easy, 1);
 
 }
 
@@ -444,7 +444,7 @@ function save()
 	
 	
 	
-						<form name="easy" id='_fom' method='post' action='tomato.cgi'>
+						<form name="easy" id='easy' method='post' action='tomato.cgi'>
 
                         <!-- / / / -->
 
