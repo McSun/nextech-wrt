@@ -333,12 +333,6 @@ form div.wide small {
 <script type='text/javascript'>
 //	<% nvram("wl_net_mode,wl_radio,wl_ssid,wl_wpa_psk"); %>
 
-function save()
-{
-
-	form.submit(easy, 1);
-
-}
 
 </script>
 
@@ -517,7 +511,7 @@ function save()
 						    <fieldset>
 						      <div class="submit">
 						        <div>
-						          	<input type='button' value='Save' id='save-button' onclick='save()'>
+						          	<input type='submit' value='Save' id='save-button'>
 		                            <input type='button' value='Cancel' id='cancel-button' onclick='reloadPage();'>
 						        </div>
 						      </div>
