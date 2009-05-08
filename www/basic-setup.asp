@@ -333,6 +333,12 @@ form div.wide small {
 <script type='text/javascript'>
 //	<% nvram("wl_net_mode,wl_radio,wl_ssid,wl_wpa_psk"); %>
 
+function save()
+{
+
+	form.submit(fom, 1);
+
+}
 
 </script>
 
@@ -438,7 +444,17 @@ form div.wide small {
 	
 	
 	
-				<form name="easy" action="saved-basic.asp" method="post" enctype="multipart/form-data">
+						<form name="easy" id='_fom' method='post' action='tomato.cgi'>
+
+                        <!-- / / / -->
+
+                        <input type='hidden' name='_nextpage' value='status-overview.asp'>
+                        <input type='hidden' name='_nextwait' value='10'>
+                        <input type='hidden' name='_service' value='*'>
+                        <input type='hidden' name='_moveip' value='0'>
+
+                        <input type='hidden' name='wl_radio'>
+
 						    <p><strong>All</strong> fields are required.</p>
 						    <fieldset><legend>Wireless Network Setup</legend>
 						      <div class="notes">
@@ -456,18 +472,18 @@ form div.wide small {
 								</script>
 								
 						        <label for="first_name">Network Name:</label>
-						        <input type="text" name="ssid" id="ssid" class="inputText" size="10" maxlength="100" value="" />
+						        <input type="text" name="wl_ssid" id="wl_ssid" class="inputText" size="10" maxlength="100" value="" />
 						      </div>
 						      <div class="required">
 
 						        <label for="last_name">Password:</label>
-						        <input type="text" name="key" id="key" class="inputText" size="10" maxlength="100" value="" />
+						        <input type="text" name="wl_wpa_psk" id="wl_wpa_psk" class="inputText" size="10" maxlength="100" value="" />
 						      </div>
 						
 								<script type='text/javascript'>
 							if (nvram.wl_radio == '1' && nvram.wl_net_mode != 'disabled') {
-								document.easy.ssid.value = nvram.wl_ssid;
-								document.easy.key.value = nvram.wl_wpa_psk;
+								document.easy.wl_ssid.value = nvram.wl_ssid;
+								document.easy.wl_wpa_psk.value = nvram.wl_wpa_psk;
 							}
 								</script>
 
@@ -501,8 +517,8 @@ form div.wide small {
 						    <fieldset>
 						      <div class="submit">
 						        <div>
-						          <input type="submit" class="inputSubmit" value="Submit &raquo;" />
-						          <input type="submit" class="inputSubmit" value="Cancel" />
+						          	<input type='button' value='Save' id='save-button' onclick='save()'>
+		                            <input type='button' value='Cancel' id='cancel-button' onclick='reloadPage();'>
 						        </div>
 						      </div>
 						    </fieldset>
