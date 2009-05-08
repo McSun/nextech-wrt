@@ -226,7 +226,7 @@ function init()
 						<table cellpadding="10" cellspacing="10" width="100%">
 							<tr>
 							<td valign="top" width="50%" align="right">
-								<a href="basic-setup.asp"><img src="easy-setup.png"></a>
+								<a href="basic-setup.asp"><img src="easy-setup.png" border="0"></a>
 							</td>
 							<td valign="middle" width="50%" style="font-size: 18px;">
 								Your router has not been setup. <br/>
@@ -342,11 +342,7 @@ function init()
                   </table></td>
               </tr>
             </table></td>
-          <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-            <h3>Brainy Bunch Help</h3>
-            <p>Status Page of the router.</p>
-            <p>&nbsp;</p>
-          </div></td>
+          <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"></td>
         </tr>
       </table></td>
   </tr>

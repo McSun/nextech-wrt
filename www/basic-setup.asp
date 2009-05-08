@@ -330,6 +330,12 @@ form div.wide small {
   margin: 0 0 5px 0;
 }
 </style>
+<script type='text/javascript'>
+//	<% nvram("wl_net_mode,wl_passphrase,wl_radio,wl_ssid,wl_wpa_gtk_rekey,wl_wpa_psk,wl_auth"); %>
+
+
+</script>
+
 </HEAD>
 <body style="WIDTH: 100%; HEIGHT: 100%" bottomMargin="0" leftMargin="0" topMargin="0" rightMargin="0">
 <script language="javascript">
@@ -432,26 +438,50 @@ form div.wide small {
 	
 	
 	
-						  <form action="saved-basic.asp" method="post" enctype="multipart/form-data">
+				<form name="easy" action="saved-basic.asp" method="post" enctype="multipart/form-data">
 						    <p><strong>All</strong> fields are required.</p>
 						    <fieldset><legend>Wireless Network Setup</legend>
+						      <div class="notes">
+						        <h4>Wireless Information</h4>
+								<p>Please enter a name by which to identify your wireless network</p>
+						        <p class="last">Also enter a password to secure your wireless network. Anyone who wants to join your network will need to enter this password.</p>
+						       </div>
 						      <div class="required">
+								<script type='text/javascript'>
+								if (nvram.wl_radio == '1') && (nvram.wl_net_mode != 'disabled') {
+									document.write("Wireless is enabled.")
+								} else {
+									document.write("Wireless is disabled.")
+								}
 
+
+								</script>
+								
 						        <label for="first_name">Network Name:</label>
-						        <input type="text" name="first_name" id="first_name" class="inputText" size="10" maxlength="100" value="" />
+						        <input type="text" name="ssid" id="ssid" class="inputText" size="10" maxlength="100" value="" />
 						      </div>
 						      <div class="required">
 
 						        <label for="last_name">Password:</label>
-						        <input type="text" name="last_name" id="last_name" class="inputText" size="10" maxlength="100" value="" />
+						        <input type="text" name="key" id="key" class="inputText" size="10" maxlength="100" value="" />
 						      </div>
-
+						
+								<script type='text/javascript'>
+								document.easy.ssid.value = nvram.wl_ssid;
+								document.easy.key.value = nvram.wl_wpa_psk;
+								</script>
 
 						    </fieldset>
 
 
 
 						    <fieldset><legend>Router Login Information</legend>
+						      <div class="notes">
+						        <h4>Login Information</h4>
+						        <p>Your username must both be at least 2 characters long and is case-sensitive. Please do not enter accented characters.</p>
+						        <p>We recommend that your password is not a word you can find in the dictionary, includes both capital and lower case letters, and contains at least one special character (1-9, !, *, _, etc.).</p>
+						       
+						      </div>
 						      <div class="required">
 
 						        <label for="username">Username:</label>
@@ -490,7 +520,19 @@ form div.wide small {
                   </table></td>
               </tr>
             </table></td>
-          <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%">&nbsp;</td>
+          <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
+              <table id="DefaultRightColumn_Table1" class="RightColumn" cellspacing="0" cellpadding="10" border="0" style="WIDTH: 5%; HEIGHT: 100%">
+                <tr id="DefaultRightColumn_TableRow3">
+                  <td id="DefaultRightColumn_TableCell3" style="WIDTH: 166px; HEIGHT: 10px"></td>
+                </tr>
+                <tr id="DefaultRightColumn_TableRow1">
+                  <td id="DefaultRightColumn_TableCell1" align="Center" valign="Top" style="WIDTH: 166px; HEIGHT: 100%"></td>
+                </tr>
+                <tr id="DefaultRightColumn_TableRow2">
+                  <td id="DefaultRightColumn_TableCell2" align="Center" valign="Middle" style="WIDTH: 166px; HEIGHT: 100%"></td>
+                </tr>
+              </table>
+            </div></td>
         </tr>
       </table></td>
   </tr>
