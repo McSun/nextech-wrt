@@ -451,11 +451,6 @@ form div.wide small {
 
 						    <p><strong>All</strong> fields are required.</p>
 						    <fieldset><legend>Wireless Network Setup</legend>
-						      <div class="notes">
-						        <h4>Wireless Information</h4>
-								<p>Please enter a name by which to identify your wireless network</p>
-						        <p class="last">Also enter a password to secure your wireless network. Anyone who wants to join your network will need to enter this password.</p>
-						       </div>
 						      <div class="required">
 								<script type='text/javascript'>
 								if (nvram.wl_radio == '1' && nvram.wl_net_mode != 'disabled') {
@@ -486,13 +481,6 @@ form div.wide small {
 
 							
 						    <fieldset><legend>Router Login Information</legend>
-						      <div class="notes">
-						        <h4>Login Information</h4>
-						        
-						        <p>We recommend that your password is not a word you can find in the dictionary, includes both capital and lower case letters, and contains at least one special character (1-9, !, *, _, etc.).</p>
-						       
-						      </div>
-
 						      <div class="required">
 
 						        <label for="password">Password:</label>
@@ -516,7 +504,7 @@ form div.wide small {
 						        </div>
 						      </div>
 						    </fieldset>
-						  </form>
+					    </form>
 					
 					
 					
@@ -525,19 +513,7 @@ form div.wide small {
                   </table></td>
               </tr>
             </table></td>
-          <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%"><div id="RightColumn">
-              <table id="DefaultRightColumn_Table1" class="RightColumn" cellspacing="0" cellpadding="10" border="0" style="WIDTH: 5%; HEIGHT: 100%">
-                <tr id="DefaultRightColumn_TableRow3">
-                  <td id="DefaultRightColumn_TableCell3" style="WIDTH: 166px; HEIGHT: 10px"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow1">
-                  <td id="DefaultRightColumn_TableCell1" align="Center" valign="Top" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-                <tr id="DefaultRightColumn_TableRow2">
-                  <td id="DefaultRightColumn_TableCell2" align="Center" valign="Middle" style="WIDTH: 166px; HEIGHT: 100%"></td>
-                </tr>
-              </table>
-            </div></td>
+          <td id="ContentRightCell" valign="Top" style="WIDTH: 164px; HEIGHT: 100%">&nbsp;</td>
         </tr>
       </table></td>
   </tr>
